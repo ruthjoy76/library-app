@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #root {
@@ -17,8 +17,21 @@
   padding: 1em;
 }
 
+.header h1 {
+  color: #4caecf;
+  font-size: 1.48rem;
+  padding-bottom: 0.25em;
+}
+
+.header p {
+  color: #0f0f0f;
+  font-size: 1rem;
+}
+
+
 .main {
   display: grid;
+  place-items: center;
   grid-template-columns: repeat(5, 1fr);
   padding: 1em;
   gap: 1em;
@@ -27,9 +40,12 @@
 .book {
   display: flex;
   flex-direction: column;
-  background-color: burlywood;
+  background-color: #4caecf;
+  border-radius: 1.5em;
   padding: 1em;
-  height: 250px;
+  height: 20ch;
+  width: 25ch;
+  box-shadow: 10px 10px 5px 2px rgba(48, 66, 230, 0.212);
 }
 
 .book div {
@@ -37,17 +53,18 @@
 }
 
 .book h2 {
-  font-size: 16px;
+  color: #fff;
+  font-size: 1rem;
   margin-bottom: 0.5em;
 }
 
 .author {
-  font-size: 12px;
+  font-size: 1rem;
 }
 
 .pages {
   text-align: center;
-  font-size: 10px;
+  font-size: 0.75rem;
   font-style: italic;
 }
 
@@ -58,7 +75,7 @@
 }
 
 .add-btn {
-  font-size: 32px;
+  font-size: 2rem;
   border-radius: 100%;
   padding: 0.25em;
   height: 60px;
@@ -83,7 +100,7 @@
 }
 
 .modal-container {
-  background-color: beige;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -97,9 +114,53 @@
 
 .modal-container button {
   height: 32px;
-  font-size: 16px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #4caecf;
 }
 
 .add-book-btn:hover {
   cursor: pointer;
+}
+
+@media (max-width:1200px) {
+
+  .main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1em;
+    gap: 2em;
+  }
+}
+
+
+@media (max-width:768px) {
+
+  .main {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding: 1em;
+    gap: 1.5em;
+  }
+
+  .add-btn-container {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    padding-top: 2em;
+  }
+  
+  .add-btn {
+    font-size: 2rem;
+    border-radius: 100%;
+    padding: 0.25em;
+    height: 60px;
+    width: 60px;
+  }
+  
+  .add-btn:hover {
+    cursor: pointer;
+  }
+  
 }
